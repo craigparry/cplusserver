@@ -1,0 +1,15 @@
+/vcpkg_installed
+.vscode 
+/build
+
+
+# Compiler-generated files
+*.o
+*.obj
+*.so
+*.exe
+*.out
+*.app
+*.dll
+*.dylib
+*.pdb

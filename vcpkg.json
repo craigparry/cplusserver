@@ -1,0 +1,9 @@
+{
+    "name": "myproject",
+    "version": "1.0",
+    "dependencies": [
+      "uwebsockets",
+      "boost-beast"
+    ]
+  }
+  
