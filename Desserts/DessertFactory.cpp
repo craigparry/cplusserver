@@ -1,14 +1,14 @@
 #include "DessertFactory.h"
 
-Dessert *DessertFactory::createDessert(const std::string &type)
+std::unique_ptr<Dessert> DessertFactory::createDessert(const std::string &type)
 {
     if (type == "cake")
     {
-        return new Cake(); // Create a new Cake object
+        return std::unique_ptr<Cake>(); // Create a new Cake object
     }
     else if (type == "brownie")
     {
-        return new Brownie(); // Create a new Brownie object
+        return std::unique_ptr<Brownie>(); // Create a new Brownie object
     }
     else
     {

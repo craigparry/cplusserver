@@ -2,7 +2,10 @@
     "name": "myproject",
     "version": "1.0",
     "dependencies": [
-      "uwebsockets"
+      "uwebsockets",
+      "boost-algorithm",
+      "boost-asio", 
+      "boost-system"
     ]
   }
   

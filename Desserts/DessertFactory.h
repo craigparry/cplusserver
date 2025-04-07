@@ -8,7 +8,7 @@
 class DessertFactory
 {
 public:
-    static Dessert *createDessert(const std::string &type);
+    static std::unique_ptr<Dessert> createDessert(const std::string &type);
     virtual ~DessertFactory() = default; // Use default destructor
 };
 

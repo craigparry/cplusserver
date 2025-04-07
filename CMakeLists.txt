@@ -46,8 +46,23 @@ set(CMAKE_CXX_STANDARD 20)
 # add_subdirectory(external/uWebsockets)
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/arm64-osx/share")
 find_package(unofficial-uwebsockets CONFIG REQUIRED)
+find_package(boost_algorithm REQUIRED CONFIG)
+find_package(boost_system REQUIRED CONFIG)
+find_package(boost_asio REQUIRED CONFIG)
+    
+    
 
 
-add_executable(my-app main.cpp)
+# Add all .cpp files in the current directory
+file(GLOB SOURCES "*.cpp")
+
+# Add all .cpp files in the 'desserts' subdirectory
+file(GLOB MORE_SOURCES "desserts/*.cpp")
+
+# Combine the sources from the current directory and the 'desserts' directory
+list(APPEND SOURCES ${MORE_SOURCES})
+
+# add_executable(my-app main.cpp)
+add_executable(my-app ${SOURCES})
 # target_link_libraries(my-app PRIVATE uwebsockets::uwebsockets)
-target_link_libraries(my-app PRIVATE unofficial::uwebsockets::uwebsockets)
+target_link_libraries(my-app PRIVATE unofficial::uwebsockets::uwebsockets Boost::algorithm Boost::system Boost::asio)
