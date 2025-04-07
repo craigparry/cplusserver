@@ -1,6 +1,7 @@
 /vcpkg_installed
 .vscode 
 /build
+.venv
 
 
 # Compiler-generated files
